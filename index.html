@@ -262,6 +262,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/2018年/初识Docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/picture.PNG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李冲冲的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/2018年/初识Docker/" itemprop="url">初识Docker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T22:30:24+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="1-Linux容器化技术-LXC"><a href="#1-Linux容器化技术-LXC" class="headerlink" title="1. Linux容器化技术 - LXC"></a>1. Linux容器化技术 - LXC</h1><p>LXC(Linux Container)</p>
+<p>Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。</p>
+<p> Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。</p>
+<p><img src="https://user-images.githubusercontent.com/31929148/37913001-70185a34-3146-11e8-8f42-a5329bed0ea8.png" alt="image"></p>
+<p>其中，LXC主要使用namespace和cgroup两种能力来实现操作系统层次的资源虚拟化。</p>
+<ul>
+<li><p>namespace：一个namespace中包含独立的进程、网络、消息、文件系统等资源。不同的namespace实现了应用和资源间的相互隔离。</p>
+</li>
+<li><p>cgproup实现了对资源进行配额和度量的能力。创建/cgroup并创建相关的配置，实现对资源的控制。/cgroup的能力类似于/chroot。 </p>
+</li>
+</ul>
+<h1 id="2-docker镜像"><a href="#2-docker镜像" class="headerlink" title="2. docker镜像"></a>2. docker镜像</h1><p>一个只读模板，由多个只读层组成。docker利用镜像来创建docker容器。镜像中包含容器运行所需的所有静态资源。可将应用依赖的各种软件直接打包到镜像中。</p>
+<h1 id="3-docker容器"><a href="#3-docker容器" class="headerlink" title="3. docker容器"></a>3. docker容器</h1><p>根据docker镜像创建的一个运行实例。docker容器的模型与镜像的区别在于在只读层上创建了一个读/写层。一个容器中包含了应用运行所需的所有环境（软件依赖、用户权限、文件系统、网络空间等），并且不同容器的运行环境相互独立。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/26/2018年/初识Docker/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/sort算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -685,7 +821,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -698,7 +834,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -739,8 +875,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
