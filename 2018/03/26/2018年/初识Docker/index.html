@@ -69,19 +69,19 @@
 
 
 
-<meta name="description" content="1. Linux容器化技术 - LXCLXC(Linux Container) Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。  Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。  其中，LXC">
+<meta name="description" content="1. Linux容器化技术 - LXCLXC(Linux Container) Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。  Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Docker">
 <meta property="og:url" content="http://yoursite.com/2018/03/26/2018年/初识Docker/index.html">
 <meta property="og:site_name" content="李冲冲的博客">
-<meta property="og:description" content="1. Linux容器化技术 - LXCLXC(Linux Container) Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。  Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。  其中，LXC">
+<meta property="og:description" content="1. Linux容器化技术 - LXCLXC(Linux Container) Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。  Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-images.githubusercontent.com/31929148/37913001-70185a34-3146-11e8-8f42-a5329bed0ea8.png">
-<meta property="og:updated_time" content="2018-03-26T15:17:00.213Z">
+<meta property="og:updated_time" content="2018-03-26T15:33:48.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Docker">
-<meta name="twitter:description" content="1. Linux容器化技术 - LXCLXC(Linux Container) Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。  Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。  其中，LXC">
+<meta name="twitter:description" content="1. Linux容器化技术 - LXCLXC(Linux Container) Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。  Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/31929148/37913001-70185a34-3146-11e8-8f42-a5329bed0ea8.png">
 
 
@@ -335,6 +335,7 @@
         <h1 id="1-Linux容器化技术-LXC"><a href="#1-Linux容器化技术-LXC" class="headerlink" title="1. Linux容器化技术 - LXC"></a>1. Linux容器化技术 - LXC</h1><p>LXC(Linux Container)</p>
 <p>Linux容器化技术，相比于完全对硬件资源进行虚拟化的KVM，LXC是一种轻量级的内核虚拟化技术，亦可称为操作系统层次的资源虚拟化。基于此，才发展出了docker容器化。</p>
 <p> Docker 和传统虚拟化方式的不同，容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。</p>
+<a id="more"></a>
 <p><img src="https://user-images.githubusercontent.com/31929148/37913001-70185a34-3146-11e8-8f42-a5329bed0ea8.png" alt="image"></p>
 <p>其中，LXC主要使用namespace和cgroup两种能力来实现操作系统层次的资源虚拟化。</p>
 <ul>
@@ -345,7 +346,6 @@
 </ul>
 <h1 id="2-docker镜像"><a href="#2-docker镜像" class="headerlink" title="2. docker镜像"></a>2. docker镜像</h1><p>一个只读模板，由多个只读层组成。docker利用镜像来创建docker容器。镜像中包含容器运行所需的所有静态资源。可将应用依赖的各种软件直接打包到镜像中。</p>
 <h1 id="3-docker容器"><a href="#3-docker容器" class="headerlink" title="3. docker容器"></a>3. docker容器</h1><p>根据docker镜像创建的一个运行实例。docker容器的模型与镜像的区别在于在只读层上创建了一个读/写层。一个容器中包含了应用运行所需的所有环境（软件依赖、用户权限、文件系统、网络空间等），并且不同容器的运行环境相互独立。</p>
-<a id="more"></a>
 <h1 id="4-Docker的优势"><a href="#4-Docker的优势" class="headerlink" title="4. Docker的优势"></a>4. Docker的优势</h1><ol>
 <li>不同应用间的隔离及安全性：解决软件依赖（将依赖连同软件本身一起打包）、端口冲突，系统安全（每个容器都有独立的进程、网络，消息和文件系统–namespace）等问题。</li>
 <li>Linbux平台间的可移植性：标准化环境的构建。注：lxc是基于linux内核的，所以docker容器只能运行在Linux环境上。</li>
