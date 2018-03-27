@@ -333,11 +333,8 @@
       
         
           <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。</p>
-<h1 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h1><ol>
-<li><p>文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。</p>
-<p>分块方法如下：<br>a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。<br>b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(data)%K得到的结果，将该数据写入第M(0&lt;=M&lt;=K)个小文件中。<br>c. 根据以上划分方式，相同的数据都会写入到编号相同的小文件中，所以对两个文件的处理就转变为对一系列小文件的处理。完成了对大数据量文件的分块处理。</p>
-</li>
-</ol>
+<h1 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h1><p>1.件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。</p>
+<p>  分块方法如下：<br>  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。<br>  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(data)%K得到的结果，将该数据写入第M(0&lt;=M&lt;=K)个小文件中。<br>  c. 根据以上划分方式，相同的数据都会写入到编号相同的小文件中，所以对两个文件的处理就转变为对一系列小文件的处理。完成了对大数据量文件的分块处理。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/27/2018年/大数据量文件处理问题/#more" rel="contents">
@@ -953,7 +950,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
