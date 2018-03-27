@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="printf," />
+  <meta name="keywords" content="大数据量文件处理算法," />
 
 
 
@@ -69,21 +69,18 @@
 
 
 
-<meta name="description" content="奇怪的输出结果晚上，小佳佳突然问了我一个很有意思的问题，原来是printf输出了一个令人出乎意料的结果。">
-<meta name="keywords" content="printf">
+<meta name="description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路 文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。 分块方法如下：a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(">
+<meta name="keywords" content="大数据量文件处理算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="printf的故事">
-<meta property="og:url" content="http://yoursite.com/2017/09/28/printf的故事/index.html">
+<meta property="og:title" content="查找两个大数据量文件中相同&#x2F;不同的数据">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/2018年/大数据量文件处理问题/index.html">
 <meta property="og:site_name" content="李冲冲的博客">
-<meta property="og:description" content="奇怪的输出结果晚上，小佳佳突然问了我一个很有意思的问题，原来是printf输出了一个令人出乎意料的结果。">
+<meta property="og:description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路 文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。 分块方法如下：a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/30979474-4f70b024-a4b0-11e7-8d28-d59681806f49.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/30979829-7ce1ae68-a4b1-11e7-9e3d-e6cea54c83b9.png">
-<meta property="og:updated_time" content="2018-03-26T15:32:35.801Z">
+<meta property="og:updated_time" content="2018-03-27T15:26:46.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="printf的故事">
-<meta name="twitter:description" content="奇怪的输出结果晚上，小佳佳突然问了我一个很有意思的问题，原来是printf输出了一个令人出乎意料的结果。">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/31929148/30979474-4f70b024-a4b0-11e7-8d28-d59681806f49.png">
+<meta name="twitter:title" content="查找两个大数据量文件中相同&#x2F;不同的数据">
+<meta name="twitter:description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路 文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。 分块方法如下：a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(">
 
 
 
@@ -113,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/28/printf的故事/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/27/2018年/大数据量文件处理问题/"/>
 
 
 
 
 
-  <title>printf的故事 | 李冲冲的博客</title>
+  <title>查找两个大数据量文件中相同/不同的数据 | 李冲冲的博客</title>
   
 
 
@@ -266,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/printf的故事/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/2018年/大数据量文件处理问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lichong">
@@ -283,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">printf的故事</h1>
+          <h1 class="post-title" itemprop="name headline">查找两个大数据量文件中相同/不同的数据</h1>
         
 
         <div class="post-meta">
@@ -295,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T22:01:31+08:00">
-                2017-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T22:30:24+08:00">
+                2018-03-27
               </time>
             
 
@@ -333,23 +330,18 @@
       
 
       
-        <h1 id="奇怪的输出结果"><a href="#奇怪的输出结果" class="headerlink" title="奇怪的输出结果"></a>奇怪的输出结果</h1><p>晚上，小佳佳突然问了我一个很有意思的问题，原来是printf输出了一个令人出乎意料的结果。</p>
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。</p>
+<h1 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h1><ol>
+<li><p>文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。</p>
+<p>分块方法如下：<br>a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。<br>b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(data)%K得到的结果，将该数据写入第M(0&lt;=M&lt;=K)个小文件中。<br>c. 根据以上划分方式，相同的数据都会写入到编号相同的小文件中，所以对两个文件的处理就转变为对一系列小文件的处理。完成了对大数据量文件的分块处理。</p>
+</li>
+</ol>
 <a id="more"></a>
-<p>问题描述：当一个2byte的整型负数，以16进制格式输出时，却得到了一个4byte的输出结果。</p>
-<p>于是基于此问题，我顺便做了以下几组数据的输出，用来理解这一奇怪的现象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">short a = 1, b = -5;</div><div class="line">short c = 0xf234ffff;</div><div class="line">short d = 0x1234ffff;</div><div class="line">int e = 0x1234ffff;</div><div class="line"></div><div class="line">printf(&quot;sizeof(short) = %d\n&quot;, sizeof(short));</div><div class="line">printf(&quot;a=%04x, b=%04x, c=%04x, d=%04x, e=%04x\n&quot;, a, b, c,d,e);</div><div class="line">printf(&quot;a=%04x, b=%04x, c=%04x, d=%04x,e=%04x\n&quot;, a, (unsigned int)b, (unsigned int)c,(unsigned int)d,(unsigned int)e);</div><div class="line">printf(&quot;a=%04x, b=%04x, c=%04x, d=%04x,e=%04x\n&quot;, a, (unsigned short)b,(unsigned short)c,(unsigned short)d,(unsigned short)e);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">输出结果</div><div class="line"></div><div class="line">sizeof(short) = 2</div><div class="line">a=0001, b=fffffffb, c=ffffffff, d=ffffffff, e=1234ffff</div><div class="line">a=0001, b=fffffffb, c=ffffffff, d=ffffffff,e=1234ffff</div><div class="line">a=0001, b=fffb, c=ffff, d=ffff,e=ffff</div></pre></td></tr></table></figure>
-<p>其中，2byte的变量b在第2，3次的printf打印中，输出结果均为4byte。刚看到这个输出结果的时候，大吃一惊，着实从系统编译器的位数，到人生的意义，甚至到宇宙的起源，彻彻底底的怀疑了一遍。</p>
-<h1 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h1><p>其实对比一下这几组输出的结果，已经明显能够看出些端倪。<br>首先，认识一下printf中%x格式控制符的具体含义。</p>
-<p><img src="https://user-images.githubusercontent.com/31929148/30979474-4f70b024-a4b0-11e7-8d28-d59681806f49.png" alt="image"></p>
-<p>原版对%x的介绍为：unsigned int as a hexadecimal number. x uses lower-case letters and X uses upper-case.即在对变量进行打印时，是将变量当做unsigned int进行处理的。</p>
-<p>其次，在不同类型的数据进行操作时，存在以下转换规则</p>
-<p><img src="https://user-images.githubusercontent.com/31929148/30979829-7ce1ae68-a4b1-11e7-9e3d-e6cea54c83b9.png" alt="image"></p>
-<p>如果short类型的变量为负数，在printf输出时，相当于将short类型强制转换成unsigned int类型。转换顺序为short -&gt; int -&gt; unsigned int.</p>
-<p>而当该负数在传递给printf之前，先进行了unsigned short的转换时，转换顺序为short -&gt; unsigned short -&gt; unsigned int.</p>
-<p>其中相同符号类型的变量在转换时，符号保持不变。</p>
-<p>最后，在变量值超出了变量类型所能存储的最大值时，会出现数据溢出。当数据溢出时，编译器会根据变量的类型，来对变量值进行截取。如示例代码中的变量c 和 d.</p>
-<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="printf的参数传递"><a href="#printf的参数传递" class="headerlink" title="printf的参数传递"></a>printf的参数传递</h2><p>printf的参数个数是可变的，所以在处理参数的传递时，采用了栈的方式来逐个存储参数列表中的各个参数，然后再按照格式控制符逐个输出各个参数。其中 【参数入栈的顺序为从右向左】，以保证输出时，首先出栈的是参数列表中最左边的参数。</p>
+<ol>
+<li><p>对划分的相同编号的文件分别进行处理，然后再将各个处理结果归并，最终得到相应的相同的数据或者不同的数据。<br>具体处理方式如下：</p>
+<p>a. 读取文件A的第M个小文件中的数据，并按hash(data)的值存入一个HashMap中，hash值相同的数据不重复存储。<br>b. 再读取文件B的第M个小文件中的数据，并按hash(data)与已经存储的HashMap中的数据进行比较，如果相同/不同，则将data保存。</p>
+</li>
+</ol>
 
       
     </div>
@@ -367,7 +359,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/printf/" rel="tag"># printf</a>
+            <a href="/tags/大数据量文件处理算法/" rel="tag"># 大数据量文件处理算法</a>
           
         </div>
       
@@ -380,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/26/2017年/github+hexo搭建个人博客/" rel="next" title="github+hexo搭建个人博客">
-                <i class="fa fa-chevron-left"></i> github+hexo搭建个人博客
+              <a href="/2018/03/26/2018年/初识Docker/" rel="next" title="初识Docker">
+                <i class="fa fa-chevron-left"></i> 初识Docker
               </a>
             
           </div>
@@ -389,10 +381,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/29/sort算法/" rel="prev" title="sort算法">
-                sort算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#奇怪的输出结果"><span class="nav-number">1.</span> <span class="nav-text">奇怪的输出结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解密"><span class="nav-number">2.</span> <span class="nav-text">解密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展"><span class="nav-number">3.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#printf的参数传递"><span class="nav-number">3.1.</span> <span class="nav-text">printf的参数传递</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法思路"><span class="nav-number">2.</span> <span class="nav-text">算法思路</span></a></li></ol></div>
             
 
           </div>
