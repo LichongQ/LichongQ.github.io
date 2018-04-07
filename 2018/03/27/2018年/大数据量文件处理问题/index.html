@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路1.件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。   分块方法如下：  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=has">
+<meta name="description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路1.文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。   分块方法如下：  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=ha">
 <meta name="keywords" content="大数据量文件处理算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查找两个大数据量文件中相同&#x2F;不同的数据">
 <meta property="og:url" content="http://yoursite.com/2018/03/27/2018年/大数据量文件处理问题/index.html">
 <meta property="og:site_name" content="李冲冲的博客">
-<meta property="og:description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路1.件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。   分块方法如下：  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=has">
+<meta property="og:description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路1.文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。   分块方法如下：  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=ha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T15:49:32.454Z">
+<meta property="og:updated_time" content="2018-04-07T14:55:02.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查找两个大数据量文件中相同&#x2F;不同的数据">
-<meta name="twitter:description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路1.件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。   分块方法如下：  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=has">
+<meta name="twitter:description" content="问题描述对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。 算法思路1.文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。   分块方法如下：  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=ha">
 
 
 
@@ -331,7 +331,7 @@
 
       
         <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>对比两个数据量较大的文件（大小均远超过服务器的最大内存空间），如何高效率地找出其中相同或者不同的数据。</p>
-<h1 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h1><p>1.件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。</p>
+<h1 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h1><p>1.文件所存储的数据量非常大，不可能将文件一次性的放入内存中处理。所以，需要考虑将文件进行分块处理。</p>
 <p>  分块方法如下：<br>  a. 根据服务器内存大小以及文件本身大小，确认将文件划分为适合处理的K个小文件中。<br>  b. 分别对文件A和B中的每条数据data进行哈希计算，并根据M=hashCode(data)%K得到的结果，将该数据写入第M(0&lt;=M&lt;=K)个小文件中。<br>  c. 根据以上划分方式，相同的数据都会写入到编号相同的小文件中，所以对两个文件的处理就转变为对一系列小文件的处理。完成了对大数据量文件的分块处理。</p>
 <a id="more"></a>
 <p>2.对划分的相同编号的文件分别进行处理，然后再将各个处理结果归并，最终得到相应的相同的数据或者不同的数据。<br>  具体处理方式如下：</p>
@@ -458,7 +458,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -471,7 +471,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
