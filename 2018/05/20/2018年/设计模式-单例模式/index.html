@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="TCP/IP," />
+  <meta name="keywords" content="单例模式，实现方式," />
 
 
 
@@ -69,24 +69,18 @@
 
 
 
-<meta name="description" content="TCP/IP的四层协议模型和OSI的七层协议模型 TCP/IP的三次握手和四次挥手 socket网络编程与TCP/IP  TCP/IP四层协议TCP/IP四层协议模型：物理链路层、网络层、传输层和应用层。OSI七层协议模型：物理层、数据链路层、网络层、传输层、回话层、表示层和应用层">
-<meta name="keywords" content="TCP&#x2F;IP">
+<meta name="description" content="懒汉式，线程不安全 懒汉式，线程安全 双加锁（双重检验锁） 饿汉式 静态内部类  单例模式创建者模式的一种，主要用来保证在JVM中只存在唯一的类对象。 1、大型类频繁创建出的超级对象，系统开销很大。 2、使用同一个对象，降低系统内存的使用频率，减轻GC压力。 3、某些场景下，使用单例模式保证对象的唯一性，保证核心模块独立控制整个流程。">
+<meta name="keywords" content="单例模式，实现方式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP&#x2F;IP协议">
-<meta property="og:url" content="http://yoursite.com/2018/04/07/2018年/TCP协议/index.html">
+<meta property="og:title" content="设计模式-单例模式">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/2018年/设计模式-单例模式/index.html">
 <meta property="og:site_name" content="李冲冲的博客">
-<meta property="og:description" content="TCP/IP的四层协议模型和OSI的七层协议模型 TCP/IP的三次握手和四次挥手 socket网络编程与TCP/IP  TCP/IP四层协议TCP/IP四层协议模型：物理链路层、网络层、传输层和应用层。OSI七层协议模型：物理层、数据链路层、网络层、传输层、回话层、表示层和应用层">
+<meta property="og:description" content="懒汉式，线程不安全 懒汉式，线程安全 双加锁（双重检验锁） 饿汉式 静态内部类  单例模式创建者模式的一种，主要用来保证在JVM中只存在唯一的类对象。 1、大型类频繁创建出的超级对象，系统开销很大。 2、使用同一个对象，降低系统内存的使用频率，减轻GC压力。 3、某些场景下，使用单例模式保证对象的唯一性，保证核心模块独立控制整个流程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/38456478-a482ed8c-3ab7-11e8-9103-146af5f3f81b.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/38456564-62843944-3ab8-11e8-9a4e-87723f30d8f2.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/38456617-0d1ef0e2-3ab9-11e8-8d34-9bd9ea4a9688.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/38456634-40fb2ac0-3ab9-11e8-85ac-518a58efb7aa.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/31929148/38456637-618f243a-3ab9-11e8-8eae-570128c9cd46.png">
-<meta property="og:updated_time" content="2018-04-07T15:23:45.476Z">
+<meta property="og:updated_time" content="2018-05-20T06:02:36.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP&#x2F;IP协议">
-<meta name="twitter:description" content="TCP/IP的四层协议模型和OSI的七层协议模型 TCP/IP的三次握手和四次挥手 socket网络编程与TCP/IP  TCP/IP四层协议TCP/IP四层协议模型：物理链路层、网络层、传输层和应用层。OSI七层协议模型：物理层、数据链路层、网络层、传输层、回话层、表示层和应用层">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/31929148/38456478-a482ed8c-3ab7-11e8-9103-146af5f3f81b.png">
+<meta name="twitter:title" content="设计模式-单例模式">
+<meta name="twitter:description" content="懒汉式，线程不安全 懒汉式，线程安全 双加锁（双重检验锁） 饿汉式 静态内部类  单例模式创建者模式的一种，主要用来保证在JVM中只存在唯一的类对象。 1、大型类频繁创建出的超级对象，系统开销很大。 2、使用同一个对象，降低系统内存的使用频率，减轻GC压力。 3、某些场景下，使用单例模式保证对象的唯一性，保证核心模块独立控制整个流程。">
 
 
 
@@ -116,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/07/2018年/TCP协议/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/20/2018年/设计模式-单例模式/"/>
 
 
 
 
 
-  <title>TCP/IP协议 | 李冲冲的博客</title>
+  <title>设计模式-单例模式 | 李冲冲的博客</title>
   
 
 
@@ -269,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/07/2018年/TCP协议/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/2018年/设计模式-单例模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lichong">
@@ -286,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TCP/IP协议</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式-单例模式</h1>
         
 
         <div class="post-meta">
@@ -298,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T22:56:24+08:00">
-                2018-04-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T12:35:24+08:00">
+                2018-05-20
               </time>
             
 
@@ -337,27 +331,87 @@
 
       
         <ul>
-<li>TCP/IP的四层协议模型和OSI的七层协议模型</li>
-<li>TCP/IP的三次握手和四次挥手</li>
-<li>socket网络编程与TCP/IP</li>
+<li>懒汉式，线程不安全</li>
+<li>懒汉式，线程安全</li>
+<li>双加锁（双重检验锁）</li>
+<li>饿汉式</li>
+<li>静态内部类</li>
 </ul>
-<h1 id="TCP-IP四层协议"><a href="#TCP-IP四层协议" class="headerlink" title="TCP/IP四层协议"></a>TCP/IP四层协议</h1><p>TCP/IP四层协议模型：物理链路层、网络层、传输层和应用层。<br>OSI七层协议模型：物理层、数据链路层、网络层、传输层、回话层、表示层和应用层</p>
+<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>创建者模式的一种，主要用来保证在JVM中只存在唯一的类对象。</p>
+<p>1、大型类频繁创建出的超级对象，系统开销很大。</p>
+<p>2、使用同一个对象，降低系统内存的使用频率，减轻GC压力。</p>
+<p>3、某些场景下，使用单例模式保证对象的唯一性，保证核心模块独立控制整个流程。</p>
 <a id="more"></a>
-<p><img src="https://user-images.githubusercontent.com/31929148/38456478-a482ed8c-3ab7-11e8-9103-146af5f3f81b.png" alt="image"></p>
-<h1 id="TCP-IP三次握手和四次挥手"><a href="#TCP-IP三次握手和四次挥手" class="headerlink" title="TCP/IP三次握手和四次挥手"></a>TCP/IP三次握手和四次挥手</h1><h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>TCP建立连接时，需要进行三次握手才能完成。</p>
-<p><img src="https://user-images.githubusercontent.com/31929148/38456564-62843944-3ab8-11e8-9a4e-87723f30d8f2.png" alt="image"></p>
-<p>Q：为什么要三次握手而不是两次<br>A：防止已经失效的连接请求报文到达服务器，从而产生错误。</p>
-<p>如果使用的是两次握手建立连接，假设有这样一种场景，客户端发送了第一个请求连接并且没有丢失，只是因为在网络结点中滞留的时间太长了，由于TCP的客户端迟迟没有收到确认报文，以为服务器没有收到，此时重新向服务器发送这条报文，此后客户端和服务器经过两次握手完成连接，传输数据，然后关闭连接。此时此前滞留的那一次请求连接，网络通畅了到达了服务器，这个报文本该是失效的，但是，两次握手的机制将会让客户端和服务器再次建立连接，这将导致不必要的错误和资源的浪费。</p>
-<p>如果采用的是三次握手，就算是那一次失效的报文传送过来了，服务端接受到了那条失效报文并且回复了确认报文，但是客户端不会再次发出确认。由于服务器收不到确认，就知道客户端并没有请求连接。</p>
-<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p>TCP释放连接时，要进行四次挥手</p>
-<p><img src="https://user-images.githubusercontent.com/31929148/38456617-0d1ef0e2-3ab9-11e8-8d34-9bd9ea4a9688.png" alt="image"></p>
-<p>Q：为什么客户端要等待2MSL<br>A：MSL（Maximum Segment Lifetime），TCP允许不同的实现可以设置不同的MSL值。</p>
-<p>第一，保证客户端发送的最后一个ACK报文能够到达服务器，因为这个ACK报文可能丢失，站在服务器的角度看来，我已经发送了FIN+ACK报文请求断开了，客户端还没有给我回应，应该是我发送的请求断开报文它没有收到，于是服务器又会重新发送一次，而客户端就能在这个2MSL时间段内收到这个重传的报文，接着给出回应报文，并且会重启2MSL计时器。</p>
-<p>第二，防止类似与“三次握手”中提到了的“已经失效的连接请求报文段”出现在本连接中。客户端发送完最后一个确认报文后，在这个2MSL时间中，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失。这样新的连接中不会出现旧连接的请求报文。</p>
-<p>为什么建立连接是三次握手，关闭连接确是四次挥手呢？</p>
-<p>建立连接的时候， 服务器在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。<br>而关闭连接时，服务器收到对方的FIN报文时，仅仅表示对方不再发送数据了但是还能接收数据，而自己也未必全部数据都发送给对方了，所以己方可以立即关闭，也可以发送一些数据给对方后，再发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送，从而导致多了一次。</p>
-<h1 id="socket网络编程和TCP-IP"><a href="#socket网络编程和TCP-IP" class="headerlink" title="socket网络编程和TCP/IP"></a>socket网络编程和TCP/IP</h1><h2 id="三次握手-1"><a href="#三次握手-1" class="headerlink" title="三次握手"></a>三次握手</h2><p><img src="https://user-images.githubusercontent.com/31929148/38456634-40fb2ac0-3ab9-11e8-85ac-518a58efb7aa.png" alt="image"></p>
-<h2 id="四次挥手-1"><a href="#四次挥手-1" class="headerlink" title="四次挥手"></a>四次挥手</h2><p><img src="https://user-images.githubusercontent.com/31929148/38456637-618f243a-3ab9-11e8-8eae-570128c9cd46.png" alt="image"></p>
+<h1 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h1><h2 id="懒汉式，线程不安全"><a href="#懒汉式，线程不安全" class="headerlink" title="懒汉式，线程不安全"></a>懒汉式，线程不安全</h2><pre><code>public class SingleTon {
+    private static SingleTon instance;
+
+    private SingleTon() {
+    }
+
+    public static SingleTon getInstance() {
+        if (instance == null) {
+            instance = new SingleTon();
+        }
+        return instance;
+    }
+}
+</code></pre><p>非线程安全：多线程场景下，instnce会被多次初始化。</p>
+<h2 id="懒汉式，线程安全"><a href="#懒汉式，线程安全" class="headerlink" title="懒汉式，线程安全"></a>懒汉式，线程安全</h2><pre><code>public class SingleTon {
+    private static SingleTon instance;
+
+    private SingleTon() {
+    }
+
+    public static synchronized SingleTon getInstance() {
+        if (instance == null) {
+            instance = new SingleTon();
+        }
+        return instance;
+    }
+}
+</code></pre><p>对getInstance进行同步，保证线程安全。该方式在任何情况下均要对instance做同步，但是其实只有在初始化时才需要同步。该方式效率不高。</p>
+<h2 id="双加锁（双重检验锁）"><a href="#双加锁（双重检验锁）" class="headerlink" title="双加锁（双重检验锁）"></a>双加锁（双重检验锁）</h2><pre><code>public class SingleTon {
+    private volatile static SingleTon instance;//增加volati，防止指令重排序
+
+    private SingleTon() {
+    }
+
+    public static SingleTon getInstance() {
+        if (instance == null) {
+            synchronized (SingleTon.class) {
+                if (instance == null) {
+                    instance = new SingleTon();
+                }
+            }
+
+        }
+        return instance;
+    }
+}
+</code></pre><p>在对instance进行初始化时，有jvm存在指令重排序优化，所以在多线程场景下，不能保证获取到的instance是被初始化后的。于是，将instance设置为volatile类型，禁止jvm对初始化过程进行指令重排序。即保证对instance的写操作先行发生于读操作。</p>
+<h2 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h2><pre><code>public class SingleTon {
+    private static final SingleTon instance = new SingleTon();
+
+    private SingleTon() {
+    }
+
+    public static SingleTon getInstance() {
+        return instance;
+    }
+}
+</code></pre><p>static和final属性保证instance在第一次加载到jvm内存时就被初始化。从而保证getInstance获取到的都是同一个对象。该方式是线程安全的。</p>
+<h2 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h2><pre><code>public class SingleTon {
+    private static class SingleTonFactory{
+        private static final SingleTon instance = new SingleTon();
+    }
+    private SingleTon() {
+    }
+
+    public static final SingleTon getInstance(){
+        return SingleTonFactory.instance;
+    }
+}
+</code></pre><p>jvm的类加载过程可以保证不同线程互斥，所以调用getInstance时，instance只被创建和初始化一次。保证了单例。</p>
 
       
     </div>
@@ -375,7 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+            <a href="/tags/单例模式，实现方式/" rel="tag"># 单例模式，实现方式</a>
           
         </div>
       
@@ -388,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/28/2018年/java的单链表翻转/" rel="next" title="java单链表逆序">
-                <i class="fa fa-chevron-left"></i> java单链表逆序
+              <a href="/2018/04/07/2018年/TCP协议/" rel="next" title="TCP/IP协议">
+                <i class="fa fa-chevron-left"></i> TCP/IP协议
               </a>
             
           </div>
@@ -397,10 +451,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/20/2018年/设计模式-单例模式/" rel="prev" title="设计模式-单例模式">
-                设计模式-单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP四层协议"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP四层协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP三次握手和四次挥手"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#socket网络编程和TCP-IP"><span class="nav-number">3.</span> <span class="nav-text">socket网络编程和TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手-1"><span class="nav-number">3.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手-1"><span class="nav-number">3.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单例模式"><span class="nav-number">1.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现方式"><span class="nav-number">2.</span> <span class="nav-text">实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#懒汉式，线程不安全"><span class="nav-number">2.1.</span> <span class="nav-text">懒汉式，线程不安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒汉式，线程安全"><span class="nav-number">2.2.</span> <span class="nav-text">懒汉式，线程安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双加锁（双重检验锁）"><span class="nav-number">2.3.</span> <span class="nav-text">双加锁（双重检验锁）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#饿汉式"><span class="nav-number">2.4.</span> <span class="nav-text">饿汉式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态内部类"><span class="nav-number">2.5.</span> <span class="nav-text">静态内部类</span></a></li></ol></li></ol></div>
             
 
           </div>
